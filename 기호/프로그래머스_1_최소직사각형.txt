@@ -1,0 +1,21 @@
+import java.util.Arrays;
+class Solution {
+    public int solution(int[][] sizes) {
+        int max_ga=0;
+        int max_se=0;
+        
+        for(int i = 0; i  sizes.length;i++){
+            for(int j = 0; j  sizes[i].length;j++){
+                Arrays.sort(sizes[i]);            
+            }
+        }
+        for(int i = 0; i  sizes.length;i++){
+           max_ga = Math.max(sizes[i][0],max_ga);
+           max_se = Math.max(sizes[i][1],max_se);
+        }
+         int answer = 0;
+        answer = max_ga  max_se;
+      
+        return answer;
+    }
+}
