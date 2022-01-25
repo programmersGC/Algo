@@ -1,3 +1,5 @@
+# 2022-01-24
+
 def solution(d, budget):
     answer = 0
     # 리스트 정렬하기
