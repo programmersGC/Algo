@@ -1,3 +1,6 @@
+## WARNING 🚨
+- 문제 풀이 전 무조건 `pull` 하기!
+
 ## PROGRAMMERS💻
 
 > 1일 1문제를 목표로 합니다.
