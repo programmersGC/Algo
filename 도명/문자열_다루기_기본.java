@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 // 문자열 다루기 기본 => 프로그래머스 문제
-
 class Solution {
     public boolean solution(String str) {
         if(str.length() == 4 || str.length() == 6) {
@@ -16,10 +15,7 @@ class Solution {
     }
 }
 
-
-
-// + 문장 입력, 설명 디테일 추가 (8-20라인 주석필요)
-
+// + 문장 입력, 설명 디테일 추가 (4-16라인 주석필요)
 public class Main {
     public static void main(String[] args){
     	Scanner input = new Scanner(System.in);
