@@ -20,7 +20,6 @@ class Solution {
             strange += str[i]; 
         }
         
-        
         return strange;
     }
 }
