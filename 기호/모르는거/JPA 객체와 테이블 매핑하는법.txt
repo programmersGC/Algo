@@ -1,0 +1,49 @@
+@Entity가 붙은 클래스는 JPA가 관리하는 엔티티. 반드시 써야 jpa사용
+* 기본생성자를 반드시 만들어줘야한다. 
+저장할 필드에 final을 쓰면 안된다
+
+
+@Table("MBR")  ---> 클래스 이름과 별개로,  DB안의 MBR이랑 테이블이랑 매핑해야한다는뜻 쿼리문에 MBR로 나감
+
+<property name="hibernate.hbm2ddl.auto" value="update" />
+<property name="hibernate.hbm2ddl.auto" value="validate" />
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+필드와 컬럼 매핑
+
+@Entity  
+public class Member { 
+ @Id 
+ private Long id; 
+ @Column(name = "name") //DB에 컬럼이 name인것..
+ private String username;  //객체는 username이라고 쓰고싶고 db에는 name이라고 쓰고싶을때
+
+ private Integer age; 
+
+ @Enumerated(EnumType.STRING) //DB에 넣을떄 Enum타입을 string으로 등록하는것, Guest, User,..
+ private RoleType roleType; 
+
+//@Temporal = 날짜 매핑
+ @Temporal(TemporalType.TIMESTAMP)  // DB에서는 TIMESTAMP,(날짜시간) DATE(날짜), TIME(시간) 3가지 타입이 존재함
+ private Date createdDate; 
+
+ LocalDate 나 LocalDateTime을 쓰면 어노테이션 없이써도됨(최신 하이버네이트일떄)
+private LocalDate testLocalDate; 
+private LocalDateTime을 testLocalDateTime;
+
+
+ @Temporal(TemporalType.TIMESTAMP) 
+ private Date lastModifiedDate; 
+
+ @Lob  //varchar를 넘어선 큰 지문
+ private String description;
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+@Column 
+
+insertable, 
+updatable 등록, 변경 가능 여부
+nullable(DDL) null 값의 허용 여부를 설정한다. false로 설정하면 DDL 생성 시에 not null 제약조건이 붙는다.
